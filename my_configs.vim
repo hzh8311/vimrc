@@ -61,8 +61,9 @@ nmap <silent><F3> :TagbarToggle<CR>
 nmap <F2> :NERDTreeToggle<CR>
 nmap <slient> <leader>bn :bn<CR>
 let NERDTreeWinPos="left"
+nmap <silent><leader>s :source %<CR>
 
-"代码折叠
+" 代码折叠
 set foldmethod=syntax
 set nofoldenable
 

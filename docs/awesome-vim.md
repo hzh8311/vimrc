@@ -32,7 +32,6 @@ map k gk
 ## Map <Space> to / (search) and <Ctrl>+<Space> to ? (backwards search):
 map <space> /
 map <c-space> ?
-map <silent> <leader><cr> :noh<cr>
 
 ## 取消高亮<leader><cr>:
 map <silent> <leader><cr> :noh<cr>
@@ -68,7 +67,7 @@ map <leader>g :vimgrep // **/*.<left><left><left><left><left><left><left>
 ## 在当前文件Vimgreps:
 map <leader><space> :vimgrep // <C-R>%<C-A><right><right><right><right><right><right><right><right><right>
 
-## Remove the Windows ^M - when the encodings gets messed up:
+## 移除windows的换行符^M:
 noremap <leader>m mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm
 
 ## 打开一个草稿buffer:
@@ -93,7 +92,7 @@ iab 20/04/16 09:05:14 <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
  
 # Visual模式快捷键
      
-## Visual mode pressing * or # searches for the current selection:
+## Visual mode下按*或#搜索当前选中:
 vnoremap <silent> * :call VisualSelection('f')<CR>
 vnoremap <silent> # :call VisualSelection('b')<CR>
      
@@ -123,7 +122,7 @@ cnoremap <C-K>      <C-U>
 cnoremap <C-P> <Up>
 cnoremap <C-N> <Down>
      
-## sudo方式写文件 (only on Unix). Super useful when you open a file and you don't have permissions to save your changes. Vim tip:
+## sudo方式写文件 (only on Unix).:
 :W 
 
 # 拼写检查(开关)
