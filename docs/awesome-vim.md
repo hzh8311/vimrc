@@ -1,7 +1,7 @@
 # 与插件有关的快捷键
 
 ## 打开buffer窗口管理当前buffer窗口:
-map <leader>o :BufExplorer<cr>
+    map <leader>o :BufExplorer<cr>
 
 ## 打开MRU.vim查看最近文件:
 map <leader>f :MRU<CR>
