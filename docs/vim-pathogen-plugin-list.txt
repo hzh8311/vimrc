@@ -1,0 +1,51 @@
+/home/huang/.vim_runtime/sources_forked:
+mru
+peaksea           主题
+set_tabline       tab栏
+vim-irblack-forked
+vim-peepopen
+yankring
+
+/home/huang/.vim_runtime/sources_non_forked:
+ack.vim
+ag.vim
+bufexplorer
+ctrlp.vim
+goyo.vim
+gruvbox
+mayansmoke          主题
+nerdtree
+nginx-vim-syntax
+open_file_under_cursor.vim
+rust.vim
+snipmate-snippets
+syntastic           语法检查
+tagbar              F3
+tlib
+vim-addon-mw-utils
+vim-airline
+vim-airline-themes
+vim-bundle-mako
+vim-coffee-script
+vim-colorschemes
+vim-colors-solarized
+vim-commentary
+vim-expand-region
+vim-flake8
+vim-fugitive
+vim-gitgutter
+vim-go
+vim-indent-object
+vim-less
+vim-markdown
+vim-misc
+vim-multiple-cursors
+vim-pug
+vim-pyte
+vim-repeat
+vim-session
+vim-snipmate
+vim-snippets
+vim-surround
+vim-zenroom2
+YouCompleteMe
