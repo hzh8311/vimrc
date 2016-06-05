@@ -52,6 +52,7 @@ autocmd! bufwritepost vimrc source ~/.vim_runtime/my_configs.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Turn persistent undo on 
+" author: huangzhihua
 "    means that you can undo even when you close a buffer/VIM
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 try
