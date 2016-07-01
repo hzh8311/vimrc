@@ -1,3 +1,4 @@
+" vim foldmethod=marker
 "C，C++ 按F5编译运行
 filetype plugin on
 syntax enable
@@ -37,7 +38,7 @@ func! Rungdb()
 endfunc
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                                    configuration                                                     "
+"                                                    configuration{{{1                                                    "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set textwidth=120
 set clipboard+=unnamed 
@@ -104,15 +105,16 @@ nmap <C-@>d :cs find d <C-R>=expand("<cword>")<cr><cr>
 :inoremap > <c-r>=ClosePair('>')<CR>
 :inoremap <C-s> <ESC>:w!<cr>i
 " 行首行末
-map <C-a> 0
-map! <C-a> <C-o>0
-map <C-e> $
-map! <C-e> <C-o>$
+map <C-a> <Home>
+map! <C-a> <Home>
+map <C-e> <End>
+map! <C-e> <End>
 " leader
-nmap <slient><leader>bn :bn<CR>
-nmap <slient><leader>bp :bp<cr>
-nmap <leader>bd :bdelete<CR>
-nmap <silent><leader>tg :!ctags -R .<CR>
-nmap <silent><leader>so :source %<CR>
-nmap <silent><leader>tt :tabnext<CR>
+map <silent><leader>bn :bn<CR>
+map <slient><leader>bp :bp<cr>
+map <leader>bd :bdelete<CR>
+map <silent><leader>tg :!ctags -R .<CR>
+map <silent><leader>so :source ~/.vimrc<CR>
+map <silent><leader>tt :tabnext<CR>
 map <silent><leader>ycm :YcmGenerateConfig
+
