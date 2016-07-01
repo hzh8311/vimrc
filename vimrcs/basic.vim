@@ -109,12 +109,6 @@ set foldcolumn=2
 "
 " Enable syntax highlighting
 syntax enable
-
-try
-    colorscheme monokai
-catch
-endtry
-
 set background=dark
 
 " Set extra options when running in GUI mode

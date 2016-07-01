@@ -1,10 +1,7 @@
 " vim foldmethod=marker
-"C，C++ 按F5编译运行
 filetype plugin on
 syntax enable
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                                    functions{{{1                                                     "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => functions{{{1
 
 function! ClosePair(char)
     if getline('.')[col('.') - 1] == a:char
@@ -36,10 +33,10 @@ func! Rungdb()
     exec "!g++ % -g -o %<"
     exec "!gdb ./%<"
 endfunc
+"}}}
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                                    configuration{{{1                                                    "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => configuration{{{1
+
 set textwidth=120
 set clipboard+=unnamed 
 set nobackup
@@ -58,7 +55,6 @@ let g:session_autoload="yes"
 " airline configuration
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_section_y = '%{strftime("%c")}'
-let g:airline_section_b = 'BN: %{bufnr("%")}'
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let airline_theme = 'base16_monokai'
@@ -69,18 +65,19 @@ set guifont=Source\ Code\ Pro\ 13
 
 "vim-latex-suite
 set grepprg=grep\ -nH\ $*
-let g:tex_flavor='latex'
+let g:tex_flavor='xelatex'
 " NerdCommenter
 " leader c + '-'
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"                                                       keybings{{{1                                                   "
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+" => keybings{{{1
+
 map ; :
 " 解决ultisnips和ycm的冲突
 let g:UltiSnipsExpandTrigger="<c-j>"
 let g:UltiSnipsJumpForwardTrigger="<c-j>"
 let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 " F-keybings
+" C，C++ 按F5编译运行
 map <silent><F5> :call CompileRunGcc()<CR>
 map <silent><F8> :call Rungdb()<CR>
 nmap <silent><F3> :TagbarToggle<CR>
@@ -95,15 +92,12 @@ nmap <C-@>f :cs find f <C-R>=expand("<cword>")<cr><cr>
 nmap <C-@>i :cs find i <C-R>=expand("<cword>")<cr><cr>
 nmap <C-@>d :cs find d <C-R>=expand("<cword>")<cr><cr>
 " 括号自动补全
-:inoremap { {}<ESC>i
-:inoremap } <c-r>=ClosePair('}')<CR>
-:inoremap [ []<ESC>i
-:inoremap ] <c-r>=ClosePair(']')<CR>
-:inoremap " ""<ESC>i
-:inoremap ' ''<ESC>i
-:inoremap < <><ESC>i
-:inoremap > <c-r>=ClosePair('>')<CR>
-:inoremap <C-s> <ESC>:w!<cr>i
+:inoremap <silent> } <c-r>=ClosePair('}')<CR>
+:inoremap <silent> ] <c-r>=ClosePair(']')<CR>
+:inoremap <silent> > <c-r>=ClosePair('>')<CR>
+:inoremap <silent> ) <c-r>=ClosePair(')')<CR>
+
+inoremap <C-s> <ESC>:w!<cr>i
 " 行首行末
 map <C-a> <Home>
 map! <C-a> <Home>
