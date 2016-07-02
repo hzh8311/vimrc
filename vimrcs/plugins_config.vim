@@ -98,6 +98,6 @@ nnoremap <silent> <leader>d :GitGutterToggle<cr>
 
 " => Git fugitive
 nnoremap <silent> <leader>gc :Gcommit<cr>
-nnoremap <silent> <leader>ga :Git add ./<cr>
-nnoremap <silent> <leader>gp :GitGutterToggle<cr>
+nnoremap <silent> <leader>ga :Git add ./<cr><cr>
+nnoremap <silent> <leader>gp :Gpush<cr>
 
