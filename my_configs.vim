@@ -1,4 +1,4 @@
-" vim foldmethod=marker
+" vim: foldmethod=marker
 filetype plugin on
 syntax enable
 " => functions{{{1
@@ -66,16 +66,28 @@ set guifont=Source\ Code\ Pro\ 13
 "vim-latex-suite
 set grepprg=grep\ -nH\ $*
 let g:tex_flavor='xelatex'
-" NerdCommenter
-" leader c + '-'
+" Commentary
+vmap <C-\> :Commentary<cr>
+map <C-\> :Commentary<cr>
+" }}}
 
 " => keybings{{{1
-
-map ; :
+" map ; :
 " 解决ultisnips和ycm的冲突
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+" 使用supertab来解决snippet和youcompleteMe按键冲突问题。snippet改为使用ctrl + n选择，使用tab展开
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<tab>"
+let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+" ycm 全局配置
+let g:ycm_global_ycm_extra_conf='~/.vim/ycm_cpp.py'
+"保留原来的ctags
+let g:ycm_collect_identifiers_from_tag_files = 1  
 " F-keybings
 " C，C++ 按F5编译运行
 map <silent><F5> :call CompileRunGcc()<CR>

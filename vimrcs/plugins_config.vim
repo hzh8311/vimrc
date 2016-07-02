@@ -100,4 +100,5 @@ nnoremap <silent> <leader>d :GitGutterToggle<cr>
 nnoremap <silent> <leader>gc :Gcommit<cr>
 nnoremap <silent> <leader>ga :Git add ./<cr><cr>
 nnoremap <silent> <leader>gp :Gpush<cr>
+nnoremap <silent> <leader>gs :Gstatus<cr>
 
