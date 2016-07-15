@@ -257,7 +257,7 @@ vnoremap <silent> gv :call VisualSelection('gv', '')<CR>
 " ===> Ag searching and cope displaying{{{2
 "
 " Open Ag and put the cursor in the right position
-map <leader>s :Ag  ./<left><left><left>
+map <leader>s :Ag 
 
 " Do :help cope if you are unsure what cope is. It's super useful!
 " When you search with Ag, display your results in cope by doing:
@@ -297,7 +297,6 @@ map <leader>ba :bufdo bd<cr>
 map <leader>ll :bn<cr>
 map <leader>hh :bp<cr> 
 " }}}
-
 " Tab operate {{{2
 map <leader>tn :tabnew<cr>
 map <leader>to :tabonly<cr>

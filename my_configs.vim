@@ -53,8 +53,8 @@ set nofoldenable
 let g:session_autosave="yes"
 let g:session_autoload="yes"
 " airline configuration
-let g:airline#extensions#tabline#enabled = 0
-let g:airline_section_y = '%{strftime("%c")}'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_section_y = '%{strftime("%m/%d/%Y %a %H:%M")}'
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let airline_theme = 'base16_monokai'
@@ -65,10 +65,11 @@ set guifont=Source\ Code\ Pro\ 13
 
 "vim-latex-suite
 set grepprg=grep\ -nH\ $*
-let g:tex_flavor='xelatex'
+let g:tex_flavor='pdflatex'
 " Commentary
 vmap <C-\> :Commentary<cr>
 map <C-\> :Commentary<cr>
+
 " }}}
 
 " => keybings{{{1
@@ -90,10 +91,10 @@ let g:ycm_global_ycm_extra_conf='~/.vim/ycm_cpp.py'
 let g:ycm_collect_identifiers_from_tag_files = 1  
 " F-keybings
 " C，C++ 按F5编译运行
+map <silent><F2> :NERDTreeToggle<CR>
+map <silent><F3> :TagbarToggle<CR>
 map <silent><F5> :call CompileRunGcc()<CR>
 map <silent><F8> :call Rungdb()<CR>
-nmap <silent><F3> :TagbarToggle<CR>
-nmap <silent><F2> :NERDTreeToggle<CR>
 " cscope
 nmap <C-@>s :cs find s <C-R>=expand("<cword>")<cr><cr> 
 nmap <C-@>g :cs find g <C-R>=expand("<cword>")<cr><cr>
@@ -123,4 +124,17 @@ map <silent><leader>tg :!ctags -R .<CR>
 map <silent><leader>so :source ~/.vimrc<CR>
 map <silent><leader>tt :tabnext<CR>
 map <silent><leader>ycm :YcmGenerateConfig
+" 有道词典
+vnoremap <silent> <leader>oy :<C-u>Ydv<CR>
+nnoremap <silent> <leader>oy :<C-u>Ydc<CR>
+"noremap <leader>oy :<C-u>Yde<CR>
 
+" <leader> t + .. means toggle
+map <leader>ts :SyntasticToggleMode<cr>
+map <slient><leader><enter> :noh<cr>
+
+if exists('$TMUX')
+    set term=screen-256color
+endif
+
+set relativenumber
