@@ -19,8 +19,8 @@ func! CompileRunGcc()
     elseif &filetype == 'cpp'
         exec "!g++ % -o %<"
         exec "! ./%<"
-    elseif &filetype == 'java' 
-        exec "!javac %" 
+    elseif &filetype == 'java'
+        exec "!javac %"
         exec "!java %<"
     elseif &filetype == 'sh'
         :!./%
@@ -38,12 +38,12 @@ endfunc
 " => configuration{{{1
 
 set textwidth=120
-set clipboard+=unnamed 
+set clipboard+=unnamed
 set nobackup
 set nu
 set ruler                   " 打开状态栏标尺
 set cursorline              " 突出显示当前行
-set mouse=a 
+set mouse=a
 set selection=exclusive
 set selectmode=mouse,key
 let NERDTreeWinPos="left"
@@ -55,7 +55,7 @@ let g:session_autoload="yes"
 " airline configuration
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_section_y = '%{strftime("%m/%d/%Y %a %H:%M")}'
-let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_sep = '|'
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let airline_theme = 'base16_monokai'
 " set bg=dark
@@ -69,6 +69,7 @@ let g:tex_flavor='pdflatex'
 " Commentary
 vmap <C-\> :Commentary<cr>
 map <C-\> :Commentary<cr>
+let g:UltiSnipsDirectories = ['~/.vim_runtime/UltiSnips','UltiSnips']
 
 " }}}
 
@@ -88,7 +89,7 @@ let g:UltiSnipsEditSplit="vertical"
 " ycm 全局配置
 let g:ycm_global_ycm_extra_conf='~/.vim/ycm_cpp.py'
 "保留原来的ctags
-let g:ycm_collect_identifiers_from_tag_files = 1  
+let g:ycm_collect_identifiers_from_tag_files = 1
 " F-keybings
 " C，C++ 按F5编译运行
 map <silent><F2> :NERDTreeToggle<CR>
@@ -96,7 +97,7 @@ map <silent><F3> :TagbarToggle<CR>
 map <silent><F5> :call CompileRunGcc()<CR>
 map <silent><F8> :call Rungdb()<CR>
 " cscope
-nmap <C-@>s :cs find s <C-R>=expand("<cword>")<cr><cr> 
+nmap <C-@>s :cs find s <C-R>=expand("<cword>")<cr><cr>
 nmap <C-@>g :cs find g <C-R>=expand("<cword>")<cr><cr>
 nmap <C-@>c :cs find c <C-R>=expand("<cword>")<cr><cr>
 nmap <C-@>t :cs find t <C-R>=expand("<cword>")<cr><cr>

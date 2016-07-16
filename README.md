@@ -14,7 +14,7 @@
 
 ### 打开NERD Tree插件:
     map <F2> :NERDTreeToggle<cr>
-    map <leader>nb :NERDTreeFromBookmark 
+    map <leader>nb :NERDTreeFromBookmark
     map <leader>nf :NERDTreeFind<cr>
 
 ### goyo.vim and vim-zenroom2打造一个纯净模式.. It has a special look when editing Markdown, reStructuredText and textfiles. It only has one mapping.
@@ -89,19 +89,19 @@
 
 ### 输入xdate按回车插入当前时间:
     iab 20/04/16 09:05:14 <c-r>=strftime("%d/%m/%y %H:%M:%S")<cr>
- 
+
 # Visual模式快捷键
-     
+
 ### Visual mode下按*或#搜索当前选中:
     vnoremap <silent> * :call VisualSelection('f')<CR>
     vnoremap <silent> # :call VisualSelection('b')<CR>
-     
+
 ### 选定文本后按下gv you vimgrep:
     vnoremap <silent> gv :call VisualSelection('gv')<CR>
-     
+
 ### 按下<leader>r 可以查找并替换选中的文本(全局):
     vnoremap <silent> <leader>r :call VisualSelection('replace')<CR>
-     
+
 ### 在选中的文本两边加上各种括号:
     vnoremap $1 <esc>`>a)<esc>`<i(<esc>
     vnoremap $2 <esc>`>a]<esc>`<i[<esc>
@@ -109,35 +109,35 @@
     vnoremap $$ <esc>`>a"<esc>`<i"<esc>
     vnoremap ' <esc>`>a'<esc>`<i'<esc>
     vnoremap " <esc>`>a"<esc>`<i"<esc>
-     
+
 # 命令行快捷键
-     
+
 ### is super useful when browsing on the command line. It deletes everything until the last slash:
     cno ' <C-\>eDeleteTillSlash()<cr>
-     
+
 ### Bash like keys for the command line:
     cnoremap <C-A>      <Home>
     cnoremap <C-E>      <End>
     cnoremap <C-K>      <C-U>
     cnoremap <C-P> <Up>
     cnoremap <C-N> <Down>
-     
+
 ### sudo方式写文件 (only on Unix).:
-    :W 
+    :W
 
 # 拼写检查(开关)
 
 ### <leader>ss
     map <leader>ss :setlocal spell!<cr>
-     
+
 ### Shortcuts using <leader> instead of special chars
     map <leader>sn ]s
     map <leader>sp [s
     map <leader>sa zg
     map <leader>s? z=
-     
+
 # Cope
-     
+
 Do :help cope if you are unsure what cope is. It's super useful!
 When you search with vimgrep, display your results in cope by doing: <leader>cc
 To go to the next search result do: `<leader>n`
